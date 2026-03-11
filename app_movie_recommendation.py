@@ -6,15 +6,44 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import streamlit as st
 import requests
-st.markdown("""<style>.stApp{
-background-color: #141414; color: white;
+st.markdown("""
+<style>
+
+.stApp {
+    background-color: #141414;
+    color: white;
 }
-h1{
-color:#E50914;
-text-align = center;}
-p, label, div = {color: white !important;
+
+/* Title */
+h1 {
+    color: #E50914;
+    text-align: center;
 }
-</style>""", unsafe_allow_html = True)
+
+/* Fix normal text visibility */
+p, label, div, span {
+    color: white !important;
+}
+
+/* Style Recommend Button */
+div.stButton > button {
+    background-color: #E50914;
+    color: white;
+    border-radius: 8px;
+    height: 3em;
+    width: 200px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Button hover effect */
+div.stButton > button:hover {
+    background-color: #ff2a2a;
+    color: white;
+}
+
+</style>
+""", unsafe_allow_html=True)
 st.title("🎬 AI Movie Recommendation System")
 movies_data = pd.read_csv('movies.csv')
 selected_features = ['genres', 'keywords', 'tagline', 'cast', 'director']
