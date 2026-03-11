@@ -45,19 +45,5 @@ if st.button('Recommend'):
 
 
 
-print(list_of_all_titles)
-
-print(find_close_match)
-
-print(close_match)
-
-print(index_of_the_movie) #finding index of movie with title
-
-print(similarity_score)
-
-len(similarity_score)
-
-print(sorted_similar_movies)
-
 
 
