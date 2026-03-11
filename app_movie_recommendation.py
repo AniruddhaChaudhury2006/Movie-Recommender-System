@@ -33,11 +33,14 @@ if st.button('Recommend'):
     sorted_similar_movies = sorted(similarity_score, key = lambda x:x[1], reverse = True) # sorting movies based on similarity score
     st.write('Movies suggested for you: \n') #print names of similar movies based on index
     i = 1
-    for movie in sorted_similar_movies[1:11]:
+    for movie in sorted_similar_movies:
       index = movie[0]
       title_from_index = movies_data.iloc[index]['title']
-      st.write(i, title)
-      i = i + 1
+      if i < 11: 
+          st.write(i, title)
+          i = i + 1
+          
+    
 
 
 
