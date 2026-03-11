@@ -24,7 +24,7 @@ feature_vectors = vectorizer.fit_transform(combined_features)
 similarity = cosine_similarity(feature_vectors) 
 list_of_all_titles = movies_data['title'].tolist()
 movie_name = st.selectbox("Search your favorite movie: ", list_of_all_titles)
-API_KEY = "YOUR_TMDB_API_KEY"
+API_KEY = "d4701630208ab424bb5b08f3896ad2f0"
 def get_movie_details(movie):
     url = f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&query={movie}"
     data = requests.get(url).json()
