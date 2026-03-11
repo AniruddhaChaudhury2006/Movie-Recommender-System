@@ -12,6 +12,8 @@ background-color: #141414; color: white;
 h1{
 color:#E50914;
 text-align = center;}
+p, label, div = {color: white !important;
+}
 </style>""", unsafe_allow_html = True)
 st.title("🎬 AI Movie Recommendation System")
 movies_data = pd.read_csv('movies.csv')
@@ -50,7 +52,7 @@ if st.button('Recommend'):
         similarity_score = list(enumerate(similarity[index_of_the_movie]))
         sorted_similar_movies = sorted(similarity_score, key = lambda x:x[1], reverse = True)
         st.subheader('Movies recommended for you: \n') 
-        cols = st.columns(5)
+        cols = st.columns(3)
         i = 0
         for movie in sorted_similar_movies[1:11]:
             index = movie[0]
@@ -58,7 +60,7 @@ if st.button('Recommend'):
             poster, rating, trailer = get_movie_details(title_from_index)
             with cols[i % 5]:
                 if poster:
-                    st.image(poster)
+                    st.image(poster, use_column_width = True)
                 st.write("⭐", rating)
                 st.write(title_from_index)
                 if trailer:
