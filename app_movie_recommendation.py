@@ -8,24 +8,30 @@ import streamlit as st
 import requests
 st.markdown("""
 <style>
-
 .stApp {
     background-color: #141414;
     color: white;
 }
-
 /* Title */
 h1 {
     color: #E50914;
     text-align: center;
 }
-
-/* Fix normal text visibility */
-p, label, div, span {
+/* Normal text */
+p, label, span {
     color: white !important;
 }
-
-/* Style Recommend Button */
+/* Fix selectbox input field */
+div[data-baseweb="select"] > div {
+    background-color: white !important;
+    color: black !important;
+}
+/* Dropdown menu */
+ul {
+    background-color: white !important;
+    color: black !important;
+}
+/* Button style */
 div.stButton > button {
     background-color: #E50914;
     color: white;
@@ -35,13 +41,10 @@ div.stButton > button {
     font-size: 18px;
     font-weight: bold;
 }
-
-/* Button hover effect */
+/* Button hover */
 div.stButton > button:hover {
     background-color: #ff2a2a;
-    color: white;
 }
-
 </style>
 """, unsafe_allow_html=True)
 st.title("🎬 AI Movie Recommendation System")
