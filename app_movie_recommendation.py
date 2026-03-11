@@ -58,7 +58,7 @@ if st.button('Recommend'):
             index = movie[0]
             title_from_index = movies_data.iloc[index]['title']
             poster, rating, trailer = get_movie_details(title_from_index)
-            with cols[i % 5]:
+            with cols[i % 3]:
                 if poster:
                     st.image(poster, use_column_width = True)
                 st.write("⭐", rating)
