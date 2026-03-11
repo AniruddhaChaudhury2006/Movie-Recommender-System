@@ -37,7 +37,7 @@ if st.button('Recommend'):
       index = movie[0]
       title_from_index = movies_data.iloc[index]['title']
       if i < 11: 
-          st.write(i, title)
+          st.write(i, title_from_index)
           i = i + 1
           
     
