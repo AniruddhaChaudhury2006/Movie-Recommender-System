@@ -13,7 +13,7 @@ import difflib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import streamlit as st
-movies_data = pd.read_csv('/content/movies.csv')#loading data from csv file to a pandas dataframe
+movies_data = pd.read_csv('movies.csv')#loading data from csv file to a pandas dataframe
 selected_features = ['genres', 'keywords', 'tagline', 'cast', 'director']
 for feature in selected_features:
   movies_data[feature] = movies_data[feature].fillna('') #replacing null values with null string
